@@ -75,7 +75,7 @@ function App() {
   return (
     <WalletContextProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 flex flex-col items-center justify-center p-4">
+        <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50 flex flex-col items-center justify-center ">
           <AppContent />
         </div>
       </BrowserRouter>
