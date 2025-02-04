@@ -54,8 +54,10 @@ export const Dashboard: FC = () => {
                 </button>
 
                 {/* Dashboard Title */}
-                <LayoutDashboard className="w-8 h-8 text-purple-600" />
-                <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
+                <LayoutDashboard className="w-8 h-8 text-purple-600 hidden md:block" />
+                <h1 className="text-2xl font-bold text-gray-800 hidden md:block">
+                  Dashboard
+                </h1>
               </div>
 
               {/* Wallet Address */}
