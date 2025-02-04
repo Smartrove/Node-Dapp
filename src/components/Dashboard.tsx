@@ -1,6 +1,6 @@
 // components/Dashboard.tsx
 import { FC, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import {
   LayoutDashboard,
   Gift,
@@ -14,6 +14,7 @@ import { WalletAddress } from "./WalletAddress";
 
 export const Dashboard: FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
@@ -22,6 +23,9 @@ export const Dashboard: FC = () => {
     { icon: Wallet, label: "Earnings", href: "/earnings" },
     { icon: History, label: "Transaction History", href: "/transaction" },
   ];
+
+  const activeItem = navItems.find((item) => item.href === location.pathname);
+  const activeLabel = activeItem ? activeItem.label : "Dashboard";
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -56,7 +60,7 @@ export const Dashboard: FC = () => {
                 {/* Dashboard Title */}
                 <LayoutDashboard className="w-8 h-8 text-purple-600 hidden md:block" />
                 <h1 className="text-2xl font-bold text-gray-800 hidden md:block">
-                  Dashboard
+                  {activeLabel}
                 </h1>
               </div>
 
